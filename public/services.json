@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "1",
+    "name": "Gastrology",
+    "image": "https://i.ibb.co.com/SxhkkVX/gastrology.png"
+  },
+  {
+    "_id": "2",
+    "name": "Orthopedic",
+    "image": "https://i.ibb.co.com/9sc49GS/orthopedic.png"
+  },
+  {
+    "_id": "3",
+    "name": "Gynecology",
+    "image": "https://i.ibb.co.com/h8LLc4B/gynecology.png"
+  },
+  {
+    "_id": "4",
+    "name": "Neurology",
+    "image": "https://i.ibb.co.com/z5pPbzt/dental-Care.png"
+  },
+  {
+    "_id": "5",
+    "name": "Dental Care",
+    "image": "https://i.ibb.co.com/sv1Lm1x/dental.png"
+  },
+  {
+    "_id": "6",
+    "name": "Cosmetic Surgery",
+    "image": "https://i.ibb.co.com/cFH75jn/cosmentic-Surgery.png"
+  }
+]

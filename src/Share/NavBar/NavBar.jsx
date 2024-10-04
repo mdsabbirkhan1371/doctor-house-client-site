@@ -20,7 +20,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="px-5 navBg">
+    <div className="px-5 py-3 navBg">
       <div className="navbar text-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -42,7 +42,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-g rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-slate-700 bg-opacity-30 rounded-box z-[1] mt-3 w-52 p-3 shadow"
             >
               {navLinks}
             </ul>
