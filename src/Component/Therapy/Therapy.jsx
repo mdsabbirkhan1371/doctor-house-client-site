@@ -3,7 +3,7 @@ import therapyPic from '../../../src/assets/services/electrogastro.png';
 
 const Therapy = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-evenly items-center gap-5 p-5 md:p-8 lg:p-16">
+    <div className="flex flex-col md:flex-row justify-evenly items-center gap-5 p-5 ">
       <div className="flex-1 mb-5 md:mb-0">
         <img
           src={therapyPic}

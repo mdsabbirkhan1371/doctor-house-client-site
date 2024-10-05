@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "rating": 4.5,
+    "review": "The hospital staff was very attentive, and the doctors were extremely professional. The facilities were clean and comfortable.",
+    "image": "https://i.ibb.co.com/zhN6b4Q/review-Client1.png"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "rating": 5.0,
+    "review": "Great experience! The nurses were kind and made sure I was comfortable throughout my stay. Highly recommended.",
+    "image": "https://i.ibb.co.com/my9QSBM/review-Client.png"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "rating": 3.5,
+    "review": "The wait time was a bit long, but once I saw the doctor, the care was excellent. The hospital could improve their appointment system.",
+    "image": "https://i.ibb.co.com/zhN6b4Q/review-Client1.png"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "rating": 3.5,
+    "review": "Good experience overall. The emergency services were prompt, and the staff were knowledgeable and friendly.",
+    "image": "https://i.ibb.co.com/my9QSBM/review-Client.png"
+  },
+  {
+    "id": 5,
+    "name": "William Brown",
+    "rating": 4,
+    "review": "The doctors here are fantastic. They explained everything clearly and were very patient with my questions.",
+    "image": "https://i.ibb.co.com/zhN6b4Q/review-Client1.png"
+  },
+  {
+    "id": 6,
+    "name": "Jessica Taylor",
+    "rating": 4.2,
+    "review": "The hospital is well-equipped and has great facilities. The staff could be a bit more proactive, but overall I felt well taken care of.",
+    "image": "https://i.ibb.co.com/my9QSBM/review-Client.png"
+  },
+  {
+    "id": 7,
+    "name": "David Wilson",
+    "rating": 3.8,
+    "review": "Facilities were good, but I had some issues with the billing process. It took longer than expected to resolve.",
+    "image": "https://i.ibb.co.com/zhN6b4Q/review-Client1.png"
+  },
+  {
+    "id": 8,
+    "name": "Sophia Martinez",
+    "rating": 5.0,
+    "review": "Amazing experience! The hospital staff were all very caring and supportive, and the environment was very comfortable. Highly recommend!",
+    "image": "https://i.ibb.co.com/my9QSBM/review-Client.png"
+  }
+]
