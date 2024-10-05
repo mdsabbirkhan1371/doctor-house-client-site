@@ -1,21 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../../src/assets/Required/logo.png';
 const NavBar = () => {
   const navLinks = (
     <>
       <li>
-        <Link to={'/'}>Home</Link>
+        <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <Link to={'/about'}>About</Link>
+        <NavLink to={'/about'}>About</NavLink>
       </li>
       <li>
-        <Link to={'/appointment'}>Appointment</Link>
+        <NavLink to={'/appointment'}>Appointment</NavLink>
       </li>
       <li>
-        <Link to={'/login'}>Login</Link>
+        <NavLink to={'/login'}>Login</NavLink>
       </li>
     </>
   );
