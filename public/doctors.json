@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Ahmed",
+    "available_days": "Monday, Wednesday, Friday",
+    "fees": "$100",
+    "location": "Dhaka Medical Center, Dhaka",
+    "designation": "Consultant Cardiologist",
+    "rating": 4.8,
+    "image": "https://i.ibb.co.com/5h9F1BM/doctor.png"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Michael Khan",
+    "available_days": "Tuesday, Thursday, Saturday",
+    "fees": "$120",
+    "location": "Dhaka Medical Center, Dhaka",
+    "designation": "Orthopedic Specialist",
+    "rating": 4.6,
+    "image": "https://i.ibb.co.com/QC6FQ4K/doctor1.png"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Alia Chowdhury",
+    "available_days": "Monday to Friday",
+    "fees": "$90",
+    "location": "Dhaka Medical Center, Dhaka",
+    "designation": "Pediatrician",
+    "rating": 4.7,
+    "image": "https://i.ibb.co.com/HPmfJfV/doctor2.png"
+  }
+]
