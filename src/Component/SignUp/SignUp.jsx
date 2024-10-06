@@ -1,7 +1,11 @@
 import React from 'react';
 import signUpImage from '../../assets/Required/signInUp.png';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 const SignUp = () => {
+  <Helmet>
+    <title>Doctor Houser || Sign Up</title>
+  </Helmet>;
   return (
     <div className="hero bg-base-200 min-h-screen p-5">
       <div className="hero-content flex-col lg:flex-row items-center gap-8 w-full lg:w-4/5 lg:gap-12">
