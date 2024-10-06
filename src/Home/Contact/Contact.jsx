@@ -3,6 +3,19 @@ import { BsFillTelephoneOutboundFill } from 'react-icons/bs';
 import { IoLocation } from 'react-icons/io5';
 
 const Contact = () => {
+  const handleForm = event => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const number = formData.get('number');
+    const doctorName = formData.get('doctorName');
+    const date = formData.get('date');
+    const time = formData.get('time');
+    console.log({ name, email, number, doctorName, date, time });
+    // clear input filed
+    event.target.reset();
+  };
   return (
     <div className="navBg my-10 p-10 rounded-xl">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 p-6 lg:p-16">
@@ -25,14 +38,16 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex-1">
-          <form>
+          <form onSubmit={handleForm}>
             <div className="flex flex-col lg:flex-row gap-4 mb-4">
               <input
+                name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Patient Name"
                 className="input input-bordered input-accent w-full"
               />
               <input
+                name="email"
                 type="text"
                 placeholder="Email"
                 className="input input-bordered input-accent w-full"
@@ -40,11 +55,13 @@ const Contact = () => {
             </div>
             <div className="flex flex-col lg:flex-row gap-4 mb-4">
               <input
+                name="number"
                 type="number"
                 placeholder="Mobile Number"
                 className="input input-bordered input-accent w-full"
               />
               <input
+                name="doctorName"
                 type="text"
                 placeholder="Doctor Name"
                 className="input input-bordered input-accent w-full"
@@ -52,11 +69,13 @@ const Contact = () => {
             </div>
             <div className="flex flex-col lg:flex-row gap-4">
               <input
+                name="date"
                 type="date"
                 placeholder="Date"
                 className="input input-bordered input-accent w-full"
               />
               <input
+                name="time"
                 type="time"
                 placeholder="Time"
                 className="input input-bordered input-accent w-full"

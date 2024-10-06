@@ -2,7 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../../src/assets/Required/logo.png';
+import useAuth from '../../hooks/useAuth';
+
 const NavBar = () => {
+  const { user, logOut } = useAuth();
+
+  const handleLogout = () => {
+    logOut();
+  };
+
   const navLinks = (
     <>
       <li>
@@ -14,11 +22,20 @@ const NavBar = () => {
       <li>
         <NavLink to={'/appointment'}>Appointment</NavLink>
       </li>
-      <li>
-        <NavLink to={'/login'}>Login</NavLink>
-      </li>
+      {user ? (
+        <li>
+          <NavLink onClick={handleLogout} to={'/login'}>
+            Logout
+          </NavLink>
+        </li>
+      ) : (
+        <li>
+          <NavLink to={'/login'}>Login</NavLink>
+        </li>
+      )}
     </>
   );
+
   return (
     <div className="px-5 py-3 navBg">
       <div className="navbar text-white">
@@ -47,9 +64,9 @@ const NavBar = () => {
               {navLinks}
             </ul>
           </div>
-          <img className="w-48" src={logo} alt="" />
+          <img className="w-48" src={logo} alt="Logo" />
         </div>
-        <div className="navbar-end hidden  lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
       </div>
