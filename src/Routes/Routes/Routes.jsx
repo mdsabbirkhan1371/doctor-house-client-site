@@ -7,6 +7,7 @@ import Login from '../../Component/Login/Login';
 import About from '../../Component/About/About';
 import Appointment from '../../Component/Appointment/Appointment';
 import DoctorProfile from '../../Home/Doctors/DoctorProfile';
+import AvailableSlots from '../../Share/AvailableSlots/AvailableSlots';
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,12 @@ export const router = createBrowserRouter([
         element: <DoctorProfile></DoctorProfile>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/doctors/${params.id}`),
+      },
+      {
+        path: '/services/availableSlots/:id',
+        element: <AvailableSlots></AvailableSlots>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/availableSlots/${params.id}`),
       },
     ],
   },
