@@ -1,12 +1,13 @@
 import { Rating } from '@smastrom/react-rating';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { FaCalendarMinus } from 'react-icons/fa';
 import { IoLocation, IoLogoUsd } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
-const SingleDoctor = ({ doctor, activeDoctor, handleViewDetails }) => {
+const SingleDoctor = ({ doctor }) => {
   const {
-    id,
+    _id,
     name,
     available_days,
     designation,
@@ -40,16 +41,13 @@ const SingleDoctor = ({ doctor, activeDoctor, handleViewDetails }) => {
             <p className="ml-2"> {fees}</p>
           </div>
 
-          <div className="card-actions">
-            <button
-              className={`btn w-full ${
-                activeDoctor === id ? 'btn-warning' : 'btn-outline btn-warning'
-              }`}
-              onClick={() => handleViewDetails(id)}
-            >
-              View Details
-            </button>
-          </div>
+          <Link to={'/doctorProfile'}>
+            <div className="card-actions">
+              <button className="w-full btn btn-outline btn-warning">
+                View Details
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

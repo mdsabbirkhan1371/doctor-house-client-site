@@ -7,16 +7,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import useReviews from '../../hooks/useReviews';
 
 const ReviewsSlider = () => {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    fetch('reviews.json')
-      .then(res => res.json())
-      .then(data => setReviews(data));
-  }, []);
-
+  const [reviews] = useReviews();
   // Create pairs of reviews for each slide
   const pairedReviews = [];
   for (let i = 0; i < reviews.length; i += 2) {
@@ -53,7 +47,7 @@ const ReviewsSlider = () => {
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               {pair.map(review => (
                 <div
-                  key={review.id}
+                  key={review._id}
                   className="review-card w-full md:w-1/2 lg:max-w-md bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
                 >
                   <img

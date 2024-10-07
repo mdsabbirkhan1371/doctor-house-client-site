@@ -1,32 +1,82 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "name": "Dr. Sarah Ahmed",
     "available_days": "Monday, Wednesday, Friday",
     "fees": "$100",
     "location": "Dhaka Medical Center, Dhaka",
     "designation": "Consultant Cardiologist",
     "rating": 4.8,
-    "image": "https://i.ibb.co.com/5h9F1BM/doctor.png"
+    "image": "https://i.ibb.co.com/5h9F1BM/doctor.png",
+    "work_experience": "12 years of experience in Cardiology, including working at Apollo Hospital and United Hospital.",
+    "about": "Dr. Sarah Ahmed is a highly qualified and experienced cardiologist, dedicated to providing compassionate care to patients with heart-related issues.",
+    "education": "MBBS from Dhaka Medical College, MD in Cardiology from Bangabandhu Sheikh Mujib Medical University.",
+    "services": [
+      "Cardiac Consultation",
+      "ECG Interpretation",
+      "Heart Failure Management",
+      "Preventive Cardiology"
+    ],
+    "awards": [
+      "Best Cardiologist Award 2021",
+      "Excellence in Patient Care Award 2019"
+    ],
+    "specialization": [
+      "Cardiac Diseases",
+      "Heart Failure",
+      "Hypertension Management"
+    ]
   },
   {
-    "id": 2,
+    "_id": 2,
     "name": "Dr. Michael Khan",
     "available_days": "Tuesday, Thursday, Saturday",
     "fees": "$120",
     "location": "Dhaka Medical Center, Dhaka",
     "designation": "Orthopedic Specialist",
     "rating": 4.6,
-    "image": "https://i.ibb.co.com/QC6FQ4K/doctor1.png"
+    "image": "https://i.ibb.co.com/QC6FQ4K/doctor1.png",
+    "work_experience": "15 years of experience in Orthopedics, previously associated with Square Hospital and National Institute of Traumatology.",
+    "about": "Dr. Michael Khan specializes in treating musculoskeletal problems, providing surgical and non-surgical solutions for patients of all ages.",
+    "education": "MBBS from Sir Salimullah Medical College, MS in Orthopedics from Dhaka University.",
+    "services": [
+      "Joint Replacement Surgery",
+      "Fracture Treatment",
+      "Sports Injuries Management",
+      "Arthritis Care"
+    ],
+    "awards": [
+      "Outstanding Orthopedic Surgeon Award 2020",
+      "Innovation in Bone Health Award 2018"
+    ],
+    "specialization": ["Knee Replacement", "Arthroscopy", "Sports Medicine"]
   },
   {
-    "id": 3,
+    "_id": 3,
     "name": "Dr. Alia Chowdhury",
     "available_days": "Monday to Friday",
     "fees": "$90",
     "location": "Dhaka Medical Center, Dhaka",
     "designation": "Pediatrician",
     "rating": 4.7,
-    "image": "https://i.ibb.co.com/HPmfJfV/doctor2.png"
+    "image": "https://i.ibb.co.com/HPmfJfV/doctor2.png",
+    "work_experience": "10 years of experience in Pediatrics, working in both public and private sectors including Dhaka Shishu Hospital.",
+    "about": "Dr. Alia Chowdhury is a caring pediatrician dedicated to providing medical care to infants, children, and adolescents in a friendly and supportive environment.",
+    "education": "MBBS from Chittagong Medical College, MD in Pediatrics from BSMMU.",
+    "services": [
+      "Vaccination",
+      "Growth and Development Monitoring",
+      "Child Nutrition Counseling",
+      "Respiratory Infections Treatment"
+    ],
+    "awards": [
+      "Best Pediatrician Award 2019",
+      "Compassionate Doctor Recognition 2022"
+    ],
+    "specialization": [
+      "Childhood Immunization",
+      "Respiratory Diseases",
+      "Growth Disorders"
+    ]
   }
 ]

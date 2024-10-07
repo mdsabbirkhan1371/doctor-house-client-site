@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import SingleDoctor from './SingleDoctor';
+import useDoctors from '../../hooks/useDoctors';
 
 const Doctors = () => {
-  const [doctors, setDoctors] = useState();
-  useEffect(() => {
-    fetch('doctors.json')
-      .then(res => res.json())
-      .then(data => setDoctors(data));
-  }, []);
-  const [activeDoctor, setActiveDoctor] = useState(null);
-  const handleViewDetails = id => {
-    setActiveDoctor(id);
-  };
-
+  const [doctors] = useDoctors();
   return (
     <div>
       <div className="text-center my-16">
@@ -28,12 +19,7 @@ const Doctors = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {doctors?.map(doctor => (
-          <SingleDoctor
-            handleViewDetails={handleViewDetails}
-            key={doctor.id}
-            doctor={doctor}
-            activeDoctor={activeDoctor}
-          ></SingleDoctor>
+          <SingleDoctor key={doctor._id} doctor={doctor}></SingleDoctor>
         ))}
       </div>
     </div>

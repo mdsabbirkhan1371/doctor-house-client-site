@@ -6,6 +6,7 @@ import SignUp from '../../Component/SignUp/SignUp';
 import Login from '../../Component/Login/Login';
 import About from '../../Component/About/About';
 import Appointment from '../../Component/Appointment/Appointment';
+import DoctorProfile from '../../Home/Doctors/DoctorProfile';
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: '/appointment',
         element: <Appointment></Appointment>,
+      },
+      {
+        path: '/doctorProfile',
+        element: <DoctorProfile></DoctorProfile>,
       },
     ],
   },

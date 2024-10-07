@@ -5,6 +5,7 @@ import table from '../../assets/Required/chair 1.png';
 import 'react-datepicker/dist/react-datepicker.css';
 import useServices from '../../hooks/useServices';
 import Service from '../../Home/Service/Service';
+import SectionHeader from '../../Share/SectionHeader/SectionHeader';
 
 const Appointment = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -16,12 +17,7 @@ const Appointment = () => {
   return (
     <div>
       {/* Header Section */}
-      <div className="navBg px-5 py-5 md:px-10 md:py-24 text-white text-center md:text-left">
-        <h5 className="text-sm md:text-base lg:text-lg">Home / Appointment</h5>
-        <h3 className="text-xl md:text-2xl lg:text-4xl font-bold">
-          Appointment
-        </h3>
-      </div>
+      <SectionHeader content={'Appointment'}></SectionHeader>
 
       {/* Date Picker and Chair Section */}
       <div className="flex flex-col md:flex-row items-center justify-center my-5 md:my-14 gap-10 px-5 lg:px-14">
