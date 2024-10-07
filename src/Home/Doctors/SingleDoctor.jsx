@@ -41,7 +41,7 @@ const SingleDoctor = ({ doctor }) => {
             <p className="ml-2"> {fees}</p>
           </div>
 
-          <Link to={'/doctorProfile'}>
+          <Link to={`/doctorProfile/${_id}`}>
             <div className="card-actions">
               <button className="w-full btn btn-outline btn-warning">
                 View Details

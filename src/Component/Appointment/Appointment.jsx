@@ -47,7 +47,7 @@ const Appointment = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
           {services.map(service => (
-            <Service service={service} key={service.id}></Service>
+            <Service service={service} key={service._id}></Service>
           ))}
         </div>
       </div>
