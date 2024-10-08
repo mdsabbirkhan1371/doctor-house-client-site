@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
+import DashboardTitle from './DasboardTitle/DashboardTitle';
 
 const DashBoard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,8 +10,16 @@ const DashBoard = () => {
     setIsOpen(!isOpen);
   };
 
+  // Function to close sidebar on small devices after a NavLink is clicked
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      setIsOpen(false); // Close the sidebar for small devices
+    }
+  };
+
   return (
     <div>
+      <DashboardTitle></DashboardTitle>
       <div className="flex flex-col md:flex-row">
         {/* Toggle button for mobile view */}
         <button
@@ -35,6 +44,7 @@ const DashBoard = () => {
                     ? 'font-bold bg-green-700 rounded p-2' // Active link styles
                     : 'hover:text-gray-300'
                 }
+                onClick={handleLinkClick}
               >
                 All Users
               </NavLink>
@@ -47,6 +57,7 @@ const DashBoard = () => {
                     ? 'font-bold bg-green-700 rounded p-2' // Active link styles
                     : 'hover:text-gray-300'
                 }
+                onClick={handleLinkClick}
               >
                 Add Doctor
               </NavLink>
@@ -59,6 +70,7 @@ const DashBoard = () => {
                     ? 'font-bold bg-green-700 rounded p-2' // Active link styles
                     : 'hover:text-gray-300'
                 }
+                onClick={handleLinkClick}
               >
                 Manage Doctor
               </NavLink>
@@ -71,6 +83,7 @@ const DashBoard = () => {
                     ? 'font-bold bg-green-700 rounded p-2' // Active link styles
                     : 'hover:text-gray-300'
                 }
+                onClick={handleLinkClick}
               >
                 Home
               </NavLink>

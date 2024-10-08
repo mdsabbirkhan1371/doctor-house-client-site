@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
+  console.log({ user });
 
   const handleLogout = () => {
     logOut();
@@ -27,9 +28,12 @@ const NavBar = () => {
           <li>
             <NavLink to={'/myBooking'}>My Booking</NavLink>
           </li>
-          <li>
-            <NavLink to={'/dashboard'}>Dashboard</NavLink>
-          </li>
+          {/* Show "Dashboard" link only if the user is an admin */}
+          {user.role === 'admin' && (
+            <li>
+              <NavLink to={'/dashboard'}>Dashboard</NavLink>
+            </li>
+          )}
           <li>
             <NavLink onClick={handleLogout} to={'/login'}>
               Logout
