@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
+import { toast } from 'react-toastify';
+import useAuth from '../../hooks/useAuth';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const SingleSlot = ({ availableServices }) => {
   const { name, image, available_time, categories } = availableServices;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { user } = useAuth();
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
 
+  const handleBookingSubmit = bookingData => {
+    console.log('Booking Information:', bookingData);
+    const bookingItem = {
+      name: user.displayName,
+      email: user.email,
+      date: bookingData.date,
+      time: bookingData.time,
+      serviceName: bookingData.category,
+    };
+    if (bookingData) {
+      axiosPublic.post('/bookings', bookingItem).then(res => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your appointment has been Taken!!',
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          navigate('/');
+        }
+      });
+    }
+    // Here, you can also make an API call to submit booking data
+  };
   return (
     <div className="flex justify-center items-center min-h-screen">
       {' '}
@@ -45,8 +80,19 @@ const SingleSlot = ({ availableServices }) => {
           </div>
 
           <div className="card-actions w-full">
-            <button className="btn btn-primary w-full">Book Now</button>
+            <button
+              className="btn btn-primary w-full"
+              onClick={() => setIsModalOpen(true)} // Open the modal
+            >
+              Book Appointment
+            </button>
           </div>
+          {/* Modal Component */}
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            onSubmit={handleBookingSubmit} // Handle booking submission
+          />
         </div>
       </div>
     </div>

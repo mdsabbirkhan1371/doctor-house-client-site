@@ -8,6 +8,7 @@ import About from '../../Component/About/About';
 import Appointment from '../../Component/Appointment/Appointment';
 import DoctorProfile from '../../Home/Doctors/DoctorProfile';
 import AvailableSlots from '../../Share/AvailableSlots/AvailableSlots';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/services/availableSlots/:id',
-        element: <AvailableSlots></AvailableSlots>,
+        element: (
+          <PrivateRoute>
+            <AvailableSlots></AvailableSlots>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/availableSlots/${params.id}`),
       },
