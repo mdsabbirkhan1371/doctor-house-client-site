@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImage from '../../assets/Required/signInUp.png';
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../hooks/useAuth';
@@ -8,7 +8,11 @@ import { toast } from 'react-toastify';
 
 const Login = () => {
   const { signInUser } = useAuth();
+
+  // for private route
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const handleForm = event => {
     event.preventDefault();
     const formData = new FormData(event.target);

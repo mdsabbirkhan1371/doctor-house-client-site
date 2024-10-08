@@ -23,11 +23,16 @@ const NavBar = () => {
         <NavLink to={'/appointment'}>Appointment</NavLink>
       </li>
       {user ? (
-        <li>
-          <NavLink onClick={handleLogout} to={'/login'}>
-            Logout
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to={'/myBooking'}>My Booking</NavLink>
+          </li>
+          <li>
+            <NavLink onClick={handleLogout} to={'/login'}>
+              Logout
+            </NavLink>
+          </li>
+        </>
       ) : (
         <li>
           <NavLink to={'/login'}>Login</NavLink>

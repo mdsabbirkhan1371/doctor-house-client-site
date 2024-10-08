@@ -1,8 +1,11 @@
 import React from 'react';
 import { BsFillTelephoneOutboundFill } from 'react-icons/bs';
 import { IoLocation } from 'react-icons/io5';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+  const axiosPublic = useAxiosPublic();
   const handleForm = event => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -12,9 +15,34 @@ const Contact = () => {
     const doctorName = formData.get('doctorName');
     const date = formData.get('date');
     const time = formData.get('time');
-    console.log({ name, email, number, doctorName, date, time });
-    // clear input filed
-    event.target.reset();
+    const serviceName = formData.get('serviceName');
+    // console.log({ name, serviceName, email, number, doctorName, date, time });
+
+    const bookingInfo = {
+      name,
+      email,
+      number,
+      date,
+      time,
+      serviceName,
+      doctorName,
+    };
+    console.log(bookingInfo);
+    if (bookingInfo) {
+      axiosPublic.post('/bookings', bookingInfo).then(res => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your appointment has been Taken!!',
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          // clear input filed
+          event.target.reset();
+        }
+      });
+    }
   };
   return (
     <div className="navBg my-10 p-10 rounded-xl">
@@ -67,6 +95,12 @@ const Contact = () => {
                 className="input input-bordered input-accent w-full"
               />
             </div>
+            <input
+              name="serviceName"
+              type="text"
+              placeholder="Service Name"
+              className="input input-bordered input-accent w-full mb-2"
+            />
             <div className="flex flex-col lg:flex-row gap-4">
               <input
                 name="date"
@@ -83,7 +117,7 @@ const Contact = () => {
             </div>
             <input
               className="btn btn-warning text-white w-full mt-2"
-              value={'Book Now'}
+              value={'Book Appointment'}
               type="submit"
             />
           </form>

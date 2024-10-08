@@ -1,11 +1,11 @@
 // PrivateRoute.jsx
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const PrivateRoute = ({ children }) => {
   const { user, isLoading } = useAuth();
-
+  const location = useLocation();
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -14,12 +14,10 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  if (!user) {
-    // Redirect to login if user is not authenticated
-    return <Navigate to="/login" />;
+  if (user) {
+    return children;
   }
-
-  return children; // Render the children (protected route) if authenticated
+  return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };
 
 export default PrivateRoute;

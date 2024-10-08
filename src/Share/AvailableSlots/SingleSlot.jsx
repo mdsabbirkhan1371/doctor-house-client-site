@@ -15,15 +15,17 @@ const SingleSlot = ({ availableServices }) => {
 
   const handleBookingSubmit = bookingData => {
     console.log('Booking Information:', bookingData);
-    const bookingItem = {
+    const bookingInfo = {
       name: user.displayName,
       email: user.email,
+      number: bookingData.phoneNumber,
       date: bookingData.date,
       time: bookingData.time,
       serviceName: bookingData.category,
+      doctorName: bookingData.doctorName,
     };
     if (bookingData) {
-      axiosPublic.post('/bookings', bookingItem).then(res => {
+      axiosPublic.post('/bookings', bookingInfo).then(res => {
         if (res.data.insertedId) {
           Swal.fire({
             position: 'top-end',
