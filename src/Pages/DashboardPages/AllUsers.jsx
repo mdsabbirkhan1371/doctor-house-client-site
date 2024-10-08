@@ -8,6 +8,37 @@ const AllUsers = () => {
   const [users, refetch] = useAllUsers();
   const axiosSecure = useAxiosSecure();
 
+  // delete user
+  const deleteUser = async userId => {
+    try {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete this user!!',
+      }).then(result => {
+        if (result.isConfirmed) {
+          axiosSecure.delete(`/users/${userId}`).then(res => {
+            console.log(res);
+            if (res.data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'User has been Deleted',
+                icon: 'success',
+              });
+            }
+          });
+        }
+      });
+    } catch (error) {
+      console.error('Error deleting user :', error);
+    }
+  };
+
   // Function to make a user an admin
   const makeAdmin = async userId => {
     try {
@@ -88,7 +119,10 @@ const AllUsers = () => {
                       >
                         Make Admin
                       </button>
-                      <button className="w-full bg-red-500 text-white py-1 px-3 rounded-md text-xs hover:bg-red-600">
+                      <button
+                        onClick={() => deleteUser(user._id)}
+                        className="w-full bg-red-500 text-white py-1 px-3 rounded-md text-xs hover:bg-red-600"
+                      >
                         Delete
                       </button>
                     </div>

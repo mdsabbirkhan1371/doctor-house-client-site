@@ -29,11 +29,9 @@ const NavBar = () => {
             <NavLink to={'/myBooking'}>My Booking</NavLink>
           </li>
           {/* Show "Dashboard" link only if the user is an admin */}
-          {user.role === 'admin' && (
-            <li>
-              <NavLink to={'/dashboard'}>Dashboard</NavLink>
-            </li>
-          )}
+          <li>
+            <NavLink to={'/dashboard'}>Dashboard</NavLink>
+          </li>
           <li>
             <NavLink onClick={handleLogout} to={'/login'}>
               Logout
