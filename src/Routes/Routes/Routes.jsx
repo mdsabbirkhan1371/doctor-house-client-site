@@ -10,6 +10,11 @@ import DoctorProfile from '../../Home/Doctors/DoctorProfile';
 import AvailableSlots from '../../Share/AvailableSlots/AvailableSlots';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import MyBookings from '../../Pages/MyBookings/MyBookings';
+import DashBoard from '../../DashBoard/DashBoard';
+import AdminHome from '../../Pages/DashboardPages/AdminHome';
+import AddDoctor from '../../Pages/DashboardPages/AddDoctor';
+import ManageDoctor from '../../Pages/DashboardPages/ManageDoctor';
+import AllUsers from '../../Pages/DashboardPages/AllUsers';
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +61,28 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/availableSlots/${params.id}`),
+      },
+    ],
+  },
+  {
+    path: '/dashboard',
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        path: 'addDoctor',
+        element: <AddDoctor></AddDoctor>,
+      },
+      {
+        path: 'manageDoctor',
+        element: <ManageDoctor></ManageDoctor>,
+      },
+      {
+        path: 'adminHome',
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: 'allUsers',
+        element: <AllUsers></AllUsers>,
       },
     ],
   },

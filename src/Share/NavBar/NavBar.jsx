@@ -28,6 +28,9 @@ const NavBar = () => {
             <NavLink to={'/myBooking'}>My Booking</NavLink>
           </li>
           <li>
+            <NavLink to={'/dashboard'}>Dashboard</NavLink>
+          </li>
+          <li>
             <NavLink onClick={handleLogout} to={'/login'}>
               Logout
             </NavLink>

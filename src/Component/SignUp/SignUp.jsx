@@ -6,8 +6,10 @@ import useAuth from '../../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 const SignUp = () => {
   const { createAccount, updateUserProfile } = useAuth();
+  const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
   const handleForm = event => {
     event.preventDefault();
@@ -28,17 +30,28 @@ const SignUp = () => {
         // update user
         updateUserProfile(name, username).then(() => {
           console.log('Update user');
+
+          // send user to db
+          const userInfo = {
+            name,
+            email,
+            username,
+          };
           if (user) {
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Your Account has been Created',
-              showConfirmButton: false,
-              timer: 2000,
+            axiosPublic.post('/users', userInfo).then(res => {
+              if (res.data.insertedId) {
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Your Account has been Created',
+                  showConfirmButton: false,
+                  timer: 2000,
+                });
+                // Clear form inputs
+                event.target.reset();
+                navigate('/');
+              }
             });
-            // Clear form inputs
-            event.target.reset();
-            navigate('/');
           }
         });
       })
