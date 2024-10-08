@@ -9,6 +9,7 @@ import Appointment from '../../Component/Appointment/Appointment';
 import DoctorProfile from '../../Home/Doctors/DoctorProfile';
 import AvailableSlots from '../../Share/AvailableSlots/AvailableSlots';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import MyBookings from '../../Pages/MyBookings/MyBookings';
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: '/appointment',
         element: <Appointment></Appointment>,
+      },
+      {
+        path: '/myBooking',
+        element: <MyBookings></MyBookings>,
       },
       {
         path: '/doctorProfile/:id',
