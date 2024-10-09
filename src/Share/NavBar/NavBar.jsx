@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../../src/assets/Required/logo.png';
 import useAuth from '../../hooks/useAuth';
+import useAdmin from '../../hooks/useAdmin';
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
-  console.log({ user });
 
   const handleLogout = () => {
     logOut();
