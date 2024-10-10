@@ -34,7 +34,7 @@ const SingleSlot = ({ availableServices }) => {
             showConfirmButton: false,
             timer: 2500,
           });
-          navigate('/');
+          navigate('/myBooking');
         }
       });
     }

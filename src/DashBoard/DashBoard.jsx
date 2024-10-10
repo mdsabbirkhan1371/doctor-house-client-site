@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import DashboardTitle from './DasboardTitle/DashboardTitle';
+import useAdmin from '../hooks/useAdmin';
 
 const DashBoard = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin);
 
   // Function to close sidebar on small devices after a NavLink is clicked
   const handleLinkClick = () => {
@@ -36,19 +39,21 @@ const DashBoard = () => {
           }`}
         >
           <ul className="space-y-3">
-            <li>
-              <NavLink
-                to="/dashboard/allUsers"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-bold bg-green-700 rounded p-2' // Active link styles
-                    : 'hover:text-gray-300'
-                }
-                onClick={handleLinkClick}
-              >
-                All Users
-              </NavLink>
-            </li>
+            {isAdmin && (
+              <li>
+                <NavLink
+                  to="/dashboard/allUsers"
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'font-bold bg-green-700 rounded p-2' // Active link styles
+                      : 'hover:text-gray-300'
+                  }
+                  onClick={handleLinkClick}
+                >
+                  All Users
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 to="/dashboard/addDoctor"
