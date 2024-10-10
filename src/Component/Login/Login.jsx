@@ -23,8 +23,8 @@ const Login = () => {
     // sign in user
     signInUser(email, password)
       .then(res => {
-        console.log({ res });
         const user = res.user;
+        console.log('from login page', { user });
         if (user) {
           Swal.fire({
             position: 'top-end',

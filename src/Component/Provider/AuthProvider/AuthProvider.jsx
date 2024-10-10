@@ -34,29 +34,25 @@ const AuthProvider = ({ children }) => {
   // user exist or not
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
-      console.log({ currentUser });
       setUser(currentUser);
-      // token implement
       if (currentUser) {
-        // get token and store
-        const userInfo = {
-          email: currentUser?.email,
-        };
+        // get token and store client
+        const userInfo = { email: currentUser.email };
         axiosPublic.post('/jwt', userInfo).then(res => {
           if (res.data.token) {
             localStorage.setItem('access-token', res.data.token);
           }
         });
       } else {
-        // remove token if user is not available
+        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
         localStorage.removeItem('access-token');
       }
       setLoading(false);
     });
     return () => {
-      unsubscribe();
+      return unsubscribe();
     };
-  }, []);
+  }, [axiosPublic]);
 
   // const update user
   const updateUserProfile = (name, username) => {
