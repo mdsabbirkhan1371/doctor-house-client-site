@@ -3,6 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import DashboardTitle from './DasboardTitle/DashboardTitle';
 import useAdmin from '../hooks/useAdmin';
+import { Helmet } from 'react-helmet-async';
 
 const DashBoard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,9 @@ const DashBoard = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Doctor || Dashboard</title>
+      </Helmet>
       <DashboardTitle></DashboardTitle>
       <div className="flex flex-col md:flex-row">
         {/* Toggle button for mobile view */}
@@ -39,21 +43,19 @@ const DashBoard = () => {
           }`}
         >
           <ul className="space-y-3">
-            {isAdmin && (
-              <li>
-                <NavLink
-                  to="/dashboard/allUsers"
-                  className={({ isActive }) =>
-                    isActive
-                      ? 'font-bold bg-green-700 rounded p-2' // Active link styles
-                      : 'hover:text-gray-300'
-                  }
-                  onClick={handleLinkClick}
-                >
-                  All Users
-                </NavLink>
-              </li>
-            )}
+            <li>
+              <NavLink
+                to="/dashboard/allUsers"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'font-bold bg-green-700 rounded p-2' // Active link styles
+                    : 'hover:text-gray-300'
+                }
+                onClick={handleLinkClick}
+              >
+                All Users
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/dashboard/addDoctor"

@@ -3,10 +3,14 @@ import hospitalImage from '../../assets/Required/hospital.webp';
 import expert1 from '../../assets/Doctors/doctor.png';
 import expert2 from '../../assets/Doctors/doctor1.png';
 import expert3 from '../../assets/Doctors/doctor2.png';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <div className="bg-base-200 min-h-screen p-10">
+      <Helmet>
+        <title>Doctor || About</title>
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <div className="hero-content flex-col lg:flex-row">

@@ -6,17 +6,23 @@ import Information from '../Information/Information';
 import Reviews from '../Reviews/Reviews';
 import Doctors from '../Doctors/Doctors';
 import Contact from '../Contact/Contact';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   return (
     <div>
-      <Banner></Banner>
-      <Services></Services>
-      <Therapy></Therapy>
-      <Information></Information>
-      <Reviews></Reviews>
-      <Doctors></Doctors>
-      <Contact></Contact>
+      <Helmet>
+        <title>Doctor || Home</title>
+      </Helmet>
+      <div>
+        <Banner></Banner>
+        <Services></Services>
+        <Therapy></Therapy>
+        <Information></Information>
+        <Reviews></Reviews>
+        <Doctors></Doctors>
+        <Contact></Contact>
+      </div>
     </div>
   );
 };

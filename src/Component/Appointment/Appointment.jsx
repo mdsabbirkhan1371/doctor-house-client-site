@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import useServices from '../../hooks/useServices';
 import Service from '../../Home/Service/Service';
 import SectionHeader from '../../Share/SectionHeader/SectionHeader';
+import { Helmet } from 'react-helmet-async';
 
 const Appointment = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -16,6 +17,9 @@ const Appointment = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Doctor || Appointment</title>
+      </Helmet>
       {/* Header Section */}
       <SectionHeader content={'Appointment'}></SectionHeader>
 

@@ -35,7 +35,7 @@ const Login = () => {
           });
           // Clear form inputs
           event.target.reset();
-          navigate('/');
+          navigate(from, { replace: true });
         }
       })
       .catch(err => {
