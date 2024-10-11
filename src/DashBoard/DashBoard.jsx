@@ -43,45 +43,49 @@ const DashBoard = () => {
           }`}
         >
           <ul className="space-y-3">
-            <li>
-              <NavLink
-                to="/dashboard/allUsers"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-bold bg-green-700 rounded p-2' // Active link styles
-                    : 'hover:text-gray-300'
-                }
-                onClick={handleLinkClick}
-              >
-                All Users
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/addDoctor"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-bold bg-green-700 rounded p-2' // Active link styles
-                    : 'hover:text-gray-300'
-                }
-                onClick={handleLinkClick}
-              >
-                Add Doctor
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/manageDoctor"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'font-bold bg-green-700 rounded p-2' // Active link styles
-                    : 'hover:text-gray-300'
-                }
-                onClick={handleLinkClick}
-              >
-                Manage Doctor
-              </NavLink>
-            </li>
+            {isAdmin && (
+              <>
+                <li>
+                  <NavLink
+                    to="/dashboard/allUsers"
+                    className={({ isActive }) =>
+                      isActive
+                        ? 'font-bold bg-green-700 rounded p-2' // Active link styles
+                        : 'hover:text-gray-300'
+                    }
+                    onClick={handleLinkClick}
+                  >
+                    All Users
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/addDoctor"
+                    className={({ isActive }) =>
+                      isActive
+                        ? 'font-bold bg-green-700 rounded p-2' // Active link styles
+                        : 'hover:text-gray-300'
+                    }
+                    onClick={handleLinkClick}
+                  >
+                    Add Doctor
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/manageDoctor"
+                    className={({ isActive }) =>
+                      isActive
+                        ? 'font-bold bg-green-700 rounded p-2' // Active link styles
+                        : 'hover:text-gray-300'
+                    }
+                    onClick={handleLinkClick}
+                  >
+                    Manage Doctor
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li>
               <NavLink
                 to="/"
