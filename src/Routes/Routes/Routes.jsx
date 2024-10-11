@@ -15,6 +15,7 @@ import AdminHome from '../../Pages/DashboardPages/AdminHome';
 import AddDoctor from '../../Pages/DashboardPages/AddDoctor';
 import ManageDoctor from '../../Pages/DashboardPages/ManageDoctor';
 import AllUsers from '../../Pages/DashboardPages/AllUsers';
+import AdminRoute from '../AdminRoute/AdminRoute';
 
 export const router = createBrowserRouter([
   {
@@ -66,7 +67,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashBoard></DashBoard>,
+    element: (
+      <AdminRoute>
+        <DashBoard></DashBoard>
+      </AdminRoute>
+    ),
     children: [
       {
         path: 'addDoctor',
