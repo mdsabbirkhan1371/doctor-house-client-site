@@ -41,7 +41,7 @@ const OtherInformation = ({ doctor }) => {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold">Services</h3>
                 <ul className="list-disc list-inside">
-                  {services.map((service, i) => (
+                  {services?.map((service, i) => (
                     <li key={i}>{service}</li>
                   ))}
                 </ul>
@@ -49,7 +49,7 @@ const OtherInformation = ({ doctor }) => {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold">Awards</h3>
                 <ul className="list-disc list-inside mb-4">
-                  {awards.map((award, i) => (
+                  {awards?.map((award, i) => (
                     <li key={i}>{award}</li>
                   ))}
                 </ul>
@@ -57,7 +57,7 @@ const OtherInformation = ({ doctor }) => {
               <div>
                 <h3 className="text-2xl font-semibold">Specializations</h3>
                 <ul className="list-disc list-inside">
-                  {specialization.map((spe, i) => (
+                  {specialization?.map((spe, i) => (
                     <li key={i}>{spe}</li>
                   ))}
                 </ul>

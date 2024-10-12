@@ -11,8 +11,12 @@ const DashBoard = () => {
     setIsOpen(!isOpen);
   };
 
-  const [isAdmin] = useAdmin();
+  const [isAdmin, isLoading] = useAdmin();
   console.log(isAdmin);
+
+  if (isLoading) {
+    return <progress className="progress w-56"></progress>;
+  }
 
   // Function to close sidebar on small devices after a NavLink is clicked
   const handleLinkClick = () => {

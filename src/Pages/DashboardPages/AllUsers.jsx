@@ -5,8 +5,12 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
 const AllUsers = () => {
-  const [users, refetch] = useAllUsers();
+  const [users, refetch, isLoading] = useAllUsers();
   const axiosSecure = useAxiosSecure();
+
+  if (isLoading) {
+    return <progress className="progress w-56"></progress>;
+  }
 
   // delete user
   const deleteUser = async userId => {
