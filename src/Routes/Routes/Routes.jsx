@@ -51,7 +51,9 @@ export const router = createBrowserRouter([
         path: '/doctorProfile/:id',
         element: <DoctorProfile></DoctorProfile>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/doctors/${params.id}`),
+          fetch(
+            `https://doctor-house-server-site.vercel.app/doctors/${params.id}`
+          ),
       },
       {
         path: '/services/availableSlots/:id',
@@ -61,7 +63,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/availableSlots/${params.id}`),
+          fetch(
+            `https://doctor-house-server-site.vercel.app/services/availableSlots/${params.id}`
+          ),
       },
     ],
   },

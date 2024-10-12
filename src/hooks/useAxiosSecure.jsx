@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from './useAuth';
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', // API base URL
+  baseURL: 'https://doctor-house-server-site.vercel.app', // API base URL
 });
 
 const useAxiosSecure = () => {
